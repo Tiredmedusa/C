@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Te amo infinitamente, Cele</title>
+  <style>
+    body {
+      margin: 0;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      animation: spin 10s linear infinite;
+    }
+
+    .heart {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: red;
+      clip-path: path("M100 30 
+        C100 10, 140 0, 140 40 
+        C140 70, 100 90, 100 120 
+        C100 90, 60 70, 60 40 
+        C60 0, 100 10, 100 30Z");
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .text {
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heart">
+      <div class="text">Te amo<br>infinitamente<br>Cele</div>
+    </div>
+  </div>
+</body>
+</html>
