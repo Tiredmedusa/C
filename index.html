@@ -1,53 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cumpleaños Cele</title>
+  <meta charset="UTF-8">
+  <title>Cumple</title>
   <style>
     body {
-      background: #fff0f5;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: #ffe6f0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      color: #b22222;
+      font-family: 'Segoe UI', sans-serif;
     }
+
     #mensaje {
       font-size: 1.8rem;
       padding: 20px;
       text-align: center;
-      max-width: 400px;
-      border: 2px solid #ff69b4;
-      border-radius: 10px;
-      background: #fff0f5cc;
-      box-shadow: 0 0 15px #ff69b4aa;
-      user-select: none;
-      opacity: 1;
-      transition: opacity 0.5s ease-in-out;
+      max-width: 500px;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 0 20px #ffb6c1;
+      transition: opacity 0.4s ease-in-out;
     }
+
     button {
       margin-top: 30px;
+      padding: 15px 25px;
+      font-size: 1rem;
       background-color: #ff69b4;
       color: white;
       border: none;
-      padding: 15px 30px;
       border-radius: 30px;
-      font-size: 1.2rem;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s ease;
     }
+
     button:hover {
       background-color: #e0559f;
     }
   </style>
 </head>
 <body>
-  <div id="mensaje">Apreta abajo💖</div>
-  <button id="btnMostrar">Apretame</button>
+
+  <div id="mensaje">Apreta el boton 💖</div>
+  <button onclick="mostrarSiguiente()">Mostrar mensaje</button>
+
+  <script>
+    const mensajes = [
+      <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Juego Romántico</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: #ffe6f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    #mensaje {
+      font-size: 1.8rem;
+      padding: 20px;
+      text-align: center;
+      max-width: 500px;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 0 20px #ffb6c1;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 25px;
+      font-size: 1rem;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e0559f;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="mensaje">Apreta abajo 💖</div>
+  <button onclick="mostrarSiguiente()">Apretame</button>
 
   <script>
     const mensajes = [
@@ -61,24 +114,19 @@
       " Para Cele💕❤️💕"
     ];
 
-    const btnMostrar = document.getElementById('btnMostrar');
-    const mensajeDiv = document.getElementById('mensaje');
+    let indice = 0;
 
-    let indiceActual = 0;
-
-    btnMostrar.addEventListener('click', () => {
-      mensajeDiv.style.opacity = 0;
+    function mostrarSiguiente() {
+      const mensaje = document.getElementById("mensaje");
+      mensaje.style.opacity = 0;
 
       setTimeout(() => {
-        mensajeDiv.textContent = mensajes[indiceActual];
-        mensajeDiv.style.opacity = 1;
-
-        indiceActual++;
-        if (indiceActual >= mensajes.length) {
-          indiceActual = 0;
-        }
-      }, 500);
-    });
+        mensaje.textContent = mensajes[indice];
+        mensaje.style.opacity = 1;
+        indice = (indice + 1) % mensajes.length;
+      }, 400);
+    }
   </script>
+
 </body>
 </html>
