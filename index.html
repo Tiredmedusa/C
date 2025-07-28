@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mini Juego Romántico</title>
+  <title>Cumpleaños Feliz💕💕</title>
   <style>
     body {
       background: #fff0f5;
@@ -15,9 +15,6 @@
       height: 100vh;
       margin: 0;
       color: #b22222;
-    ActivityCompat.requestPermissions(this,
-  arrayOf(Manifest.permission.READ_MEDIA_IMAGES), 
-  REQUEST_CODE)
     }
     #mensaje {
       font-size: 1.8rem;
@@ -49,34 +46,37 @@
   </style>
 </head>
 <body>
-  <div id="mensaje">Presioná el botón para un mensaje romántico 💖</div>
+  <div id="mensaje">Apreta Abajo Cumpleñera💕</div>
   <button id="btnMostrar">Mostrar mensaje</button>
 
   <script>
     const mensajes = [
-      "Eres la luz que ilumina mis días ✨",
-      "Cada momento contigo es un tesoro 💎",
-      "Tu sonrisa es mi alegría diaria 😊",
-      "Eres mi sueño hecho realidad 🌙",
-      "Amarte es mi mejor aventura 💕",
-      "Contigo, todo es posible 💫",
-      "Tu amor me completa ❤️"
+      "Feliz Cumpleaños hermoas ✨",
+      "espero la pases hermoso 💎",
+      "Disfruta tu Legalidad 😊",
+      "Te mereces todo en este mundo 🌙",
+      "Te mando un beso mi vida 💕",
+      "Te amo para siempre 💫",
+      "Con Amor:Dylan ❤️"
+      " Para Cele💕❤️💕"
     ];
 
     const btnMostrar = document.getElementById('btnMostrar');
     const mensajeDiv = document.getElementById('mensaje');
 
+    let indiceActual = 0;
+
     btnMostrar.addEventListener('click', () => {
-      // Primero, hacemos que el mensaje se desvanezca (opacity 0)
       mensajeDiv.style.opacity = 0;
 
-      // Esperamos 500ms para cambiar el texto y hacer fade-in
       setTimeout(() => {
-        const indice = Math.floor(Math.random() * mensajes.length);
-        mensajeDiv.textContent = mensajes[indice];
-
-        // Hacemos que el mensaje aparezca con opacidad 1
+        mensajeDiv.textContent = mensajes[indiceActual];
         mensajeDiv.style.opacity = 1;
+
+        indiceActual++;
+        if (indiceActual >= mensajes.length) {
+          indiceActual = 0;
+        }
       }, 500);
     });
   </script>
