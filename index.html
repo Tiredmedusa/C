@@ -2,60 +2,83 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Te amo infinitamente, Cele</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Juego Romántico</title>
   <style>
     body {
-      margin: 0;
-      background: #1a1a1a;
+      background: #fff0f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      overflow: hidden;
-      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      color: #b22222;
     }
-
-    .container {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      animation: spin 10s linear infinite;
-    }
-
-    .heart {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      background: red;
-      clip-path: path("M100 30 
-        C100 10, 140 0, 140 40 
-        C140 70, 100 90, 100 120 
-        C100 90, 60 70, 60 40 
-        C60 0, 100 10, 100 30Z");
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .text {
-      color: white;
-      font-size: 16px;
+    #mensaje {
+      font-size: 1.8rem;
+      padding: 20px;
       text-align: center;
-      padding: 10px;
+      max-width: 400px;
+      border: 2px solid #ff69b4;
+      border-radius: 10px;
+      background: #fff0f5cc;
+      box-shadow: 0 0 15px #ff69b4aa;
+      user-select: none;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
     }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    button {
+      margin-top: 30px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e0559f;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="heart">
-      <div class="text">Te amo<br>infinitamente<br>Cele</div>
-    </div>
-  </div>
+  <div id="mensaje">Presioná el botón para un mensaje romántico 💖</div>
+  <button id="btnMostrar">Mostrar mensaje</button>
+
+  <script>
+    const mensajes = [
+      "Eres la luz que ilumina mis días ✨",
+      "Cada momento contigo es un tesoro 💎",
+      "Tu sonrisa es mi alegría diaria 😊",
+      "Eres mi sueño hecho realidad 🌙",
+      "Amarte es mi mejor aventura 💕",
+      "Contigo, todo es posible 💫",
+      "Tu amor me completa ❤️"
+    ];
+
+    const btnMostrar = document.getElementById('btnMostrar');
+    const mensajeDiv = document.getElementById('mensaje');
+
+    btnMostrar.addEventListener('click', () => {
+      // Primero, hacemos que el mensaje se desvanezca (opacity 0)
+      mensajeDiv.style.opacity = 0;
+
+      // Esperamos 500ms para cambiar el texto y hacer fade-in
+      setTimeout(() => {
+        const indice = Math.floor(Math.random() * mensajes.length);
+        mensajeDiv.textContent = mensajes[indice];
+        ActivityCompat.requestPermissions(this,
+  arrayOf(Manifest.permission.READ_MEDIA_IMAGES), 
+  REQUEST_CODE)
+
+        // Hacemos que el mensaje aparezca con opacidad 1
+        mensajeDiv.style.opacity = 1;
+      }, 500);
+    });
+  </script>
 </body>
 </html>
