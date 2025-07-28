@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cumpleaños</title>
+  <title>Cumpleaños </title>
   <style>
     body {
       background: #fff0f5;
@@ -111,30 +111,6 @@
       "Amarte es mi mejor aventura 💕",
       "Contigo, todo es posible 💫",
       "Tu amor me completa ❤️"
-    ];
-
-    const btnMostrar = document.getElementById('btnMostrar');
-    const mensajeDiv = document.getElementById('mensaje');
-
-    let indiceActual = 0;
-
-    btnMostrar.addEventListener('click', () => {
-      mensajeDiv.style.opacity = 0;
-
-      setTimeout(() => {
-        mensajeDiv.textContent = mensajes[indiceActual];
-        mensajeDiv.style.opacity = 1;
-
-        indiceActual++;
-        if (indiceActual >= mensajes.length) {
-          indiceActual = 0;
-        }
-      }, 500);
-    });
-  </script>
-</body>
-</html>
-"
     ];
 
     const btnMostrar = document.getElementById('btnMostrar');
