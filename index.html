@@ -15,6 +15,9 @@
       height: 100vh;
       margin: 0;
       color: #b22222;
+    ActivityCompat.requestPermissions(this,
+  arrayOf(Manifest.permission.READ_MEDIA_IMAGES), 
+  REQUEST_CODE)
     }
     #mensaje {
       font-size: 1.8rem;
@@ -71,9 +74,6 @@
       setTimeout(() => {
         const indice = Math.floor(Math.random() * mensajes.length);
         mensajeDiv.textContent = mensajes[indice];
-        ActivityCompat.requestPermissions(this,
-  arrayOf(Manifest.permission.READ_MEDIA_IMAGES), 
-  REQUEST_CODE)
 
         // Hacemos que el mensaje aparezca con opacidad 1
         mensajeDiv.style.opacity = 1;
